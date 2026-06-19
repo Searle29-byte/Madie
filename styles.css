@@ -1,0 +1,384 @@
+/* ============================================================
+   styles.css — Madison Searle Personal Portfolio
+   Warm earthy palette: deep walnut, clay, parchment, sage
+   ============================================================ */
+
+/* ── RESET & BASE ── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  background-color: #faf5ee;
+  color: #3b2f1e;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* ── TYPOGRAPHY SCALE ── */
+h1, h2, h3 {
+  font-family: 'Palatino Linotype', Palatino, Georgia, serif;
+  color: #3b2f1e;
+}
+
+h2 {
+  font-size: 1.9rem;
+  border-bottom: 2px solid #c9a96e;
+  padding-bottom: 10px;
+  margin-bottom: 28px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #5c3d1e;
+}
+
+p {
+  margin-bottom: 14px;
+  color: #4a3824;
+}
+
+/* ── FIXED NAVIGATION ── */
+/* Nav stays visible on scroll using position: fixed */
+#main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #2a1f12;
+  z-index: 100;
+  border-bottom: 2px solid #b5712a;
+}
+
+.nav-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 14px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  color: #c9b89a;
+  font-size: 1.05rem;
+  font-family: 'Palatino Linotype', Palatino, Georgia, serif;
+  letter-spacing: 0.06em;
+}
+
+#main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+#main-nav ul li a {
+  color: #d4c4a8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+/* ── LINK STATES (pseudo-classes required) ── */
+#main-nav ul li a:hover {
+  color: #e8a84c;
+}
+
+#main-nav ul li a:visited {
+  color: #b8a88c;
+}
+
+a {
+  color: #8f5518;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #b5712a;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #7a4a30;
+}
+
+/* ── HERO PHOTO ── */
+.hero-photo {
+  border-radius: 50%;
+  border: 4px solid #c9a96e;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero-sub {
+  color: #d4c4a8;
+  font-size: 1rem;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+/* ── HERO ACCENT: absolute positioned decorative element ── */
+/* Uses position: absolute and z-index to sit behind content */
+.hero-accent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100%;
+  background-color: rgba(181, 113, 42, 0.08);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── SECTIONS ── */
+.section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+/* Section background color variations */
+.section-light {
+  background-color: #faf5ee;
+}
+
+.section-warm {
+  background-color: #f2e8d5;
+}
+
+/* ── ID SELECTOR: about grid ── */
+/* Demonstrates #id selector in CSS */
+#about .about-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ── STAT CARDS ── */
+.about-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stat-card {
+  background-color: #3b2f1e;
+  color: #f5efe6;
+  padding: 20px 24px;
+  border-radius: 4px;
+  text-align: center;
+  /* Box model: explicit margin, padding, and border all set */
+  margin: 4px 0;
+  border: 2px solid #c9a96e;
+}
+
+.stat-num {
+  display: block;
+  font-size: 2.2rem;
+  font-family: 'Palatino Linotype', Palatino, Georgia, serif;
+  color: #e8a84c;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #c9b89a;
+  line-height: 1.4;
+}
+
+/* ── JOB CARDS ── */
+.job-card {
+  background-color: #fdf6ee;
+  border-left: 4px solid #b5712a;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  border-radius: 0 4px 4px 0;
+}
+
+.job-header {
+  margin-bottom: 12px;
+}
+
+.job-meta {
+  font-size: 0.88rem;
+  color: #8f7055;
+  display: block;
+  margin-top: 4px;
+}
+
+.job-card ul {
+  padding-left: 20px;
+  color: #4a3824;
+}
+
+.job-card ul li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+/* ── SKILLS SECTION ── */
+.skills-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 40px;
+}
+
+/* ── LISTS ── */
+/* Ordered and unordered lists styled intentionally */
+ol.styled-list, ul.styled-list {
+  padding-left: 22px;
+  color: #4a3824;
+}
+
+ol.styled-list li, ul.styled-list li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+/* Skills lists in two-column layout */
+.skills-columns ol, .skills-columns ul {
+  padding-left: 20px;
+  color: #4a3824;
+}
+
+.skills-columns li {
+  margin-bottom: 7px;
+}
+
+/* ── EDUCATION BLOCK ── */
+.education-block {
+  background-color: #f2e8d5;
+  border: 1px solid #d4b896;
+  border-radius: 4px;
+  padding: 28px 32px;
+  margin-top: 32px;
+}
+
+.education-block p {
+  margin-bottom: 6px;
+}
+
+/* ── ANCHOR SECTION ── */
+.anchor-section {
+  text-align: center;
+  padding: 32px 40px;
+}
+
+/* ── FLOATED IMAGE (Chapter 25 requirement) ── */
+.floated-block {
+  overflow: hidden;
+}
+
+.floated-img {
+  float: left;
+  margin: 0 28px 16px 0;
+  border-radius: 6px;
+  border: 3px solid #c9a96e;
+  object-fit: cover;
+}
+
+/* ── CALLOUT BOX ── */
+.callout-box {
+  background-color: #3b2f1e;
+  color: #f5efe6;
+  padding: 24px 32px;
+  border-radius: 4px;
+  border-left: 5px solid #e8a84c;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.callout-box p {
+  color: #f5efe6;
+  margin-bottom: 0;
+}
+
+/* ── CLASS SELECTORS ── */
+/* .emphasis: inline highlight */
+.emphasis {
+  color: #8f5518;
+  font-weight: bold;
+  /* text-decoration applied to a non-link element */
+  text-decoration: underline;
+  text-decoration-color: #c9a96e;
+}
+
+/* .highlight-text: used in hero */
+.highlight-text {
+  color: #e8a84c;
+  font-style: italic;
+}
+
+/* ── POSITION: RELATIVE demo ── */
+/* The #dancing-card has a relative position for badge placement */
+#dancing-card {
+  position: relative;
+}
+
+/* ── FOOTER ── */
+#main-footer {
+  background-color: #2a1f12;
+  color: #c9b89a;
+  text-align: center;
+  padding: 32px 40px;
+  margin-top: 0;
+  font-size: 0.9rem;
+}
+
+#main-footer a {
+  color: #c9a96e;
+}
+
+#main-footer a:hover {
+  color: #e8a84c;
+}
+
+.footer-small {
+  font-size: 0.8rem;
+  color: #7a6a54;
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
+/* ── RESPONSIVE: simple mobile stack ── */
+@media (max-width: 700px) {
+  #about .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 48px 20px;
+  }
+
+  .nav-inner {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #main-nav ul {
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
